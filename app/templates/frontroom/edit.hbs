@@ -1,0 +1,18 @@
+<form>
+<div class="well">
+	<h3> Edit News </h3>
+	<div class="form-group">
+        <label>Response Title:</label>
+        {{input type="text" class="form-control" value=model.responseTitle}}
+    </div>
+    <div class="form-group">
+        <label>Response Text:</label><br>
+        {{textarea class="editNewsTextArea form-control" value=model.responseText}}
+
+    </div>
+    <button {{action 'editNews' model.id}} class="btn btn-primary">Edit News</button>
+    <button {{action 'deleteNews' model.id}} class="btn btn-danger right-align">Delete News</button>
+
+</div>
+</form>
+{{outlet}}

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand navbar-inverse fixed-top">
+    <a class="navbar-left">{{#link-to 'frontroom'}}<img src="/assets/deusLogo75.png">{{/link-to}}</a>
+    <div id="navbar" class="collapse navbar-collapse show">
+        <ul class="nav navbar-nav">
+	        {{#link-to 'frontroom.index' tagName="li" href=false class="top-nav-bar-item"}}
+	        	{{#link-to 'frontroom' bubbles=false}}
+	        		Home
+	        	{{/link-to}}
+	        {{/link-to}}
+
+	        {{#link-to 'frontroom.directives' tagName="li" href=false class="top-nav-bar-item"}}
+	        	{{#link-to 'frontroom.directives' bubbles=false}}
+	        		Directives
+	        	{{/link-to}}
+	        {{/link-to}}
+
+	        {{#link-to 'frontroom.settings' tagName="li" href=false class="top-nav-bar-item"}}
+	        	{{#link-to 'frontroom.settings' bubbles=false}}
+	        		Settings
+	        	{{/link-to}}
+	        {{/link-to}}
+
+	        {{#link-to 'backroomDirectives' tagName="li" href=false class="top-nav-bar-item"}}
+	        	{{#link-to 'backroomDirectives' bubbles=false}}
+	        		BackroomOverview
+	        	{{/link-to}}
+	        {{/link-to}}
+        </ul>
+    </div><!--/.nav-collapse -->
+</nav>

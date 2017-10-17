@@ -7,6 +7,18 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    
+    // Firebase
+    contentSecurityPolicy: {'connect-src': "'self' wss://*.firebaseio.com"},
+    firebase: {
+      apiKey: "AIzaSyCtV5b9O0VdVka1QUm8gURDCL6pG2MSGSI",
+      authDomain: "emtasks-e0d23.firebaseapp.com",
+      databaseURL: "https://emtasks-e0d23.firebaseio.com",
+      projectId: "emtasks-e0d23",
+      storageBucket: "emtasks-e0d23.appspot.com",
+      messagingSenderId: "711532686283"
+    },
+  //End firebase
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

@@ -1,0 +1,79 @@
+@import "ember-bootstrap/bootstrap";
+
+$actionResultBarColors: (
+	Red: #e9635f,
+	Green: #5cb85c,
+	White: #DbDdDc,
+);
+@each $color-name, $color-hex in $actionResultBarColors {
+	.actionResultNewsBar-#{$color-name} {
+		color: $color-hex;
+
+	}
+}
+
+
+$primary-grey-shade: #888;
+$secondary-grey-shade: #333;
+
+body {
+	background-color: #B0B7C4;
+	background-image: url('deusbackgroundImage.png');
+}
+
+.form-group .editNewsTextArea { 
+	height: 150px;
+}
+.left10, form input .left10 {
+	padding-left: 10px;
+	margin-left: 10px;
+}
+
+.left20 {
+	padding-left: 20px;
+}
+
+.left30 {
+	padding-left: 30px;
+}
+
+.right-align{
+	float: right;	
+}
+
+.grey {
+	color: $primary-grey-shade;
+}
+
+.jumbotron .newsText { 
+	color: $primary-grey-shade;
+	font-size: 18px;
+	white-space: pre-line;
+}	
+
+.news-nav-bar-item {
+	font-size: 20px;
+}
+.top-nav-bar-item {
+	font-size: 22px;
+	padding-top: 12px;
+}
+
+.directives {
+	white-space: pre-line;
+	color: $primary-grey-shade;
+}
+
+.hiddenButton {
+	visibility:hidden;
+}
+
+.actionResultNewsBar {
+	text-align: center; 
+	background-color: rgba(#000, 0.9); //make same shade as navbar + lower opacity
+	padding: 10px;
+}
+
+.newsBorder { 
+	border-bottom: 1px solid #ccc;
+}

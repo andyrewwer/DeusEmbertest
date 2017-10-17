@@ -1,0 +1,14 @@
+<h1> Backroom Overview/List of Directives</h1>
+
+{{outlet}}
+
+{{#each reverse as |directive|}}
+    <div class="well"> {{#link-to 'backroomDirectives.respond' directive.id}}
+        <h4>From: {{directive.directiveSender}} </h4>
+        <h5>Type: {{directive.directiveType}}</h5>
+        <p class="directives">Directive: <br>{{directive.directiveText}}</p>
+        <p class="directives">Time: {{format-date directive.createdAt}}</p>
+        {{/link-to}}
+    </div>
+
+{{/each}}

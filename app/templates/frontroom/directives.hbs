@@ -1,0 +1,49 @@
+<h1>Directives - <em> Frozen </em></h1>
+
+<form>
+<div class="well col-sm-12 col-md-12 col-xs-12">
+    <div class="form-group col-sm-12 col-md-12 col-xs-12">
+        <label id="prepareForMagic">Request on behalf of</label><br>
+
+
+    {{custom-radio-button value="Individual" checked=directiveSender id="BehalfIndividual"}} Individual<br>
+    {{custom-radio-button value="Cabinet" checked=directiveSender id="BehalfCabinet"}} Cabinet <br>
+    {{custom-radio-button value="Multiple" checked=directiveSender id="BehalfMultiple"}} Multiple
+   
+    </div>
+    <div class="form-group col-sm-12 col-md-12 col-xs-12">
+    <label>Request Type:</label><br>
+    {{#each model as |directiveName index|}}
+
+    {{custom-radio-button value=directiveName.directiveType checked=directiveType id=(concat 'Type' directiveName.directiveType)}}
+        
+        {{directiveName.directiveType}}
+        <br>
+    {{else}}
+        {{input type="radio" name=directiveType class="left10" change=(action (mut directiveType) 'Directive')  value='Directive'}} Directive<br>
+    {{/each}}
+
+
+    </div>
+    <div class="form-group col-sm-12 col-md-12 col-xs-12 hidden" id="directiveMeetingElement">
+        <label>Meeting</label>
+        <div>
+            <div class="col-sm-6 col-md-6 col-xs-12">        
+                <p class="grey"> Who would you like to bring along with you to your meeting (both guards, military and other cabinet members)?</p>
+                {{textarea class="form-control" value=directiveBringingPeople placeholder="Make sure to mention everyone you want to bring with you"}}
+            </div>
+            <div class="col-sm-6 col-md-6 col-xs-12">        
+                <p class="grey"> Who would you like to have your meeting with (members of cabinets or people you've interacted with)?</p>
+                {{textarea class="form-control" value=directiveMeetingPeople placeholder="Make sure to mention everyone you want to meet with"}}
+            </div>
+        </div>
+    </div>
+    <div class="form-group col-sm-12 col-md-12 col-xs-12">
+        <label>Description</label>
+        <p class="left30 grey"> Make sure to specify as much detail as possible to ensure succesful completion of your intended action.</p>
+        {{textarea class="form-control editNewsTextArea" value=directiveText placeholder="Make sure to specify as much detail as possible to ensure succesful completion of your intended action."}}
+    </div>
+    <button {{action 'submitDirective'}} class="btn btn-primary">Submit  </button>
+</div>
+</form>
+{{outlet}}
