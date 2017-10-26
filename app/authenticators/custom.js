@@ -5,13 +5,13 @@ export default Base.extend({
 	store: Ember.inject.service(),
 
     restore: function (data) {
-        var _this = this;
+        var self = this;
         return new Ember.RSVP.Promise(function(resolve, reject) {
             if(Ember.isEmpty(data)) {
                 reject();
             }
 
-            _this.get('store').find('session', data.id).then(function() {
+            self.get('store').find('session', data.id).then(function() {
                         resolve();
             }, function() {
                         reject();
@@ -29,11 +29,11 @@ export default Base.extend({
 	            return;
 	        }
 
-            self.get('store').findAll('directive').then(function (user) {
+            self.get('store').findAll('directive').then(function (users) {
                 console.log("working");
-                console.log("The 'user' = " + user);
+                console.log("The 'user' = " + users);
 
-                if(user) {//USERNAME / PASSWORD
+                if(users) {//USERNAME / PASSWORD
 	                console.log("sucess");
                     resolve("success");
                 } else {
