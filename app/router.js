@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('backroomDirectives', function() {
     this.route('respond', {path: '/respond/:directive_id'});
   });
-  this.route('index');
+
   //FIND A WAY TO FORWARD FROM INDEX TO frontroom
   this.route('frontroom', function() {
     this.route('directives');
