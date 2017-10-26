@@ -1,8 +1,8 @@
 <h2> News </h2>
   <ul class="nav nav-pills flex-column">
 {{#each reverseNews as |newsItem index|}}
-    <li class="nav-item newsBorder" id={{reverse-news-numbers index model.length}}>
-    <a class="nav-link news-nav-bar-item"{{action 'showNews' index newsItem.id model.length}}> {{reverse-news-numbers index model.length}}: {{newsItem.responseTitle}} </a>
+    <li class="nav-item newsBorder" id={{reverse-news-numbers index news.length}}>
+    <a class="nav-link news-nav-bar-item"{{action 'showNews' index newsItem.id news.length}}> {{reverse-news-numbers index news.length}}: {{newsItem.responseTitle}} </a>
     </li><br><br><br>
 {{else}}
     <li class="nav-item">

@@ -114,11 +114,12 @@ export default Ember.Controller.extend({
             this.transitionToRoute('frontroom.edit', newsIdElement);
         }
     },
-    reverseNews: function(){
-        return this.get('model').toArray().reverse();
-    }.property('model.[]'),
-    reverseResponses: function(){
-            return this.get('model').toArray().reverse();
-      }.property('model.[]')
+     reverseNews: function(){
+         return this.get('news').toArray().reverse();
+     }.property('model.[]'),
+
+     reverseResponses: function(){
+         return this.get('responses').toArray().reverse();
+     }.property('model.[]')
 
 });

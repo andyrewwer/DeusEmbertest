@@ -1,8 +1,8 @@
 <h2> Personal Responses </h2>
 <ul class="nav nav-pills flex-column">
     {{#each reverseResponses as |responsesItem index|}}
-        <li class="nav-item newsBorder" id='{{reverse-news-numbers index model.length}}r'>
-            <a class="nav-link news-nav-bar-item"{{action 'showResponse' index responsesItem.id model.length}}> {{reverse-news-numbers index model.length}}: {{responsesItem.responseTitle}} </a>
+        <li class="nav-item newsBorder" id='{{reverse-news-numbers index responses.length}}r'>
+            <a class="nav-link news-nav-bar-item"{{action 'showResponse' index responsesItem.id responses.length}}> {{reverse-news-numbers index responses.length}}: {{responsesItem.responseTitle}} </a>
         </li><br><br><br>
     {{else}}
         <li class="nav-item">
